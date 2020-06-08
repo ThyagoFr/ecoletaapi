@@ -1,18 +1,15 @@
 import path from "path";
 
 module.exports = {
-  client : "mysql",
-  version : "5.7",
+  client : "sqlite3",
   connection : {
-    host : "172.17.0.2",
-    user : "root",
-    password : "ecocoletadb",
-    database : "ecocoletadb"
+    filename : path.resolve(__dirname,"src","db","ecocoletadb.sqlite")
   },
   migrations : {
     directory : path.resolve(__dirname, "src", "db", "migrations")
   },
   seeds : {
     directory : path.resolve(__dirname, "src", "db", "seeds")
-  }
+  },
+  useNullAsDefault : true
 }

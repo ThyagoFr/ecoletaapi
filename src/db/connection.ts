@@ -1,13 +1,10 @@
 import knex from "knex";
+import path from "path";
 
 const connection = knex( {
-  client : "mysql",
-  version : "5.7",
+  client : "sqlite3",
   connection : {
-    host : "172.17.0.2",
-    user : "root",
-    password : "ecocoletadb",
-    database : "ecocoletadb"
+    filename : path.resolve(__dirname, "ecocoletadb.sqlite")
   },
   useNullAsDefault : true
 });
